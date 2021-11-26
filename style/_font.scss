@@ -3,26 +3,4 @@
  * Licensed under the Open Software License version 3.0
  */
 
-@font-face {
-  font-family: Whitney;
-  font-weight: 400;
-  src: url(/dist/Whitney400.woff) format("woff")
-}
-
-@font-face {
-  font-family: Whitney;
-  font-weight: 500;
-  src: url(/dist/Whitney500.woff) format("woff")
-}
-
-@font-face {
-  font-family: Whitney;
-  font-weight: 600;
-  src: url(/dist/Whitney600.woff) format("woff")
-}
-
-@font-face {
-  font-family: Whitney;
-  font-weight: 700;
-  src: url(/dist/Whitney700.woff) format("woff")
-}
+ @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');

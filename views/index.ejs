@@ -8,25 +8,12 @@
     <meta charset='UTF-8'/>
     <meta http-equiv='X-UA-Compatible' content='ie=edge'/>
     <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no'/>
-    <title>#<%= data.channel_name %> • Discord Chat Archive</title>
+    <title>#<%= data.channel_name %> Transcript</title>
 
-    <meta name='theme-color' content='#affaff'/>
-    <meta property='og:locale' content='en_US'/>
-    <meta property='og:title' content='Discord Chat Archive'/>
-    <meta property='og:site_name' content='NailaBot'/>
-    <meta property='og:url' content='https://archive.naila.bot/'/>
-    <meta property='og:image' content='https://avatars.githubusercontent.com/u/54024876'/>
-    <meta property='og:description' content='Chat archive of #<%= data.channel_name %>'/>
-    <link rel='shortcut icon' href='https://avatars.githubusercontent.com/u/54024876'/>
-
-    <meta name='twitter:card' content='summary'/>
-    <meta name='twitter:site' content='@NailaBot'/>
-    <meta name='twitter:creator' content='@Bowser65'/>
     <!--suppress JSUnresolvedLibraryURL-->
     <link rel='stylesheet' href='https://highlightjs.org/static/demo/styles/solarized-dark.css'/>
     <style><%- assets.style %></style>
     <script>
-        window.GLOBAL_ENV = { HOSTNAME: '<%= hostname %>' };
         <%- assets.script %>
     </script>
 </head>
@@ -35,7 +22,6 @@
     <main>
         <div class='placeholder'></div>
         <div class='welcome'>
-            <div class='channel-icon'></div>
             <h1>Welcome to <b>#<%= data.channel_name %></b>!</h1>
             <div>This is the start of the #<%= data.channel_name %> channel.</div>
         </div>

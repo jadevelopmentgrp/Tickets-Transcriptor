@@ -873,5 +873,6 @@
       "content": "<@!173237945149423619> <@&645429085656580127> <#645102034579750922>"
     }
   ],
-  "channel_name": "example-archive"
+  "channel_name": "example-archive",
+  "topic": "Channel topic"
 }

@@ -5,9 +5,11 @@
   "author": "Cynthia <cynthia@cynthia.dev>",
   "license": "OSL-3.0",
   "scripts": {
-    "build-scss": "sass -s compressed style/style.scss:dist/style.css && node dl-font.js",
+    "build-scss": "sass -s compressed style/style.scss:dist/style.css",
     "build-js": "esbuild src/index.js --outfile=dist/script.js --bundle --minify --target=chrome85,firefox81,safari13,edge86 --define:process.env.NODE_ENV='\"production\"'",
-    "build": "pnpm run build-js && pnpm run build-scss"
+    "build": "npm run build-js && npm run build-scss",
+    "dev": "npm run build && npm run start",
+    "start": "node ./index.js"
   },
   "dependencies": {
     "ejs": "^3.1.5",
