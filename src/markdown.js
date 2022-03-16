@@ -119,7 +119,7 @@ class Markdown {
           let code, lang
           if (node.lang) {
             try {
-              const res = hljs.highlight(node.lang, node.content)
+              const res = hljs.highlight(node.content, {language: node.lang})
               code = res.value
               lang = res.language
             } catch (e) {}

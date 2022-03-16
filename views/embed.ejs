@@ -100,9 +100,11 @@
             <% if (embed.video) { %>
                 <div class='embed-video' is='message-video' data-url='<%= embed.video.proxy_url || embed.video.url %>'
                      style='width: <%= embed.video.displayMaxWidth %>; height: <%= embed.video.displayMaxHeight %>'>
-                    <img is='message-image' src='<%= embed.thumbnail.proxy_url || embed.thumbnail.url %>'
+                    <% if (embed.thumbnail) { %>
+                        <img is='message-image' src='<%= embed.thumbnail.proxy_url || embed.thumbnail.url %>'
                          style='width: <%= embed.video.displayMaxWidth %>; height: <%= embed.video.displayMaxHeight %>'
                          alt='Thumbnail' class='thumb'/>
+                    <% } %>
                     <div class='controls'>
                         <div class='play'>
                             <!--suppress HtmlUnknownAttribute-->
