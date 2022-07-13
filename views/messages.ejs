@@ -2,6 +2,14 @@
   Copyright (c) 2020 Cynthia K. Rey
   Licensed under the Open Software License version 3.0
 -->
+
+<%
+replaceAvatar = function(img) {
+    img.onerror = "";
+    img.src = "https://cdn.discordapp.com/embed/avatars/4.png";
+}
+%>
+
 <% const icons = [
     'https://discord.com/assets/b8029fe196b8f1382e90bbe81dab50dc.svg',
     'https://discord.com/assets/aff52bc375fe2da876174301a5c6d09d.svg',
@@ -40,8 +48,8 @@
             <!--suppress HtmlUnknownTag-->
             <discord-message data-id='<%= msg.id %>' data-author='<%= msg.author %>'
                              class='<% if (group.indexOf(msg) === 0) { %> group-start<% } %><% if (msg.deleted) { %> deleted<% } %>'>
-                <img is='message-avatar' src='<%= author.avatar %>' data-discriminator='<%= author.discriminator %>'
-                     alt='avatar' class='avatar'/>
+                <img is='message-avatar' src='aaa<%= author.avatar %>' data-discriminator='<%= author.discriminator %>'
+                     alt='avatar' class='avatar' onerror="this.onerror=null;this.src='https://cdn.discordapp.com/embed/avatars/<%= author.discriminator % 5 %>.png';" />
                 <!--suppress HtmlUnknownTag-->
                 <message-date class='time' data-type='time' data-timestamp='<%= msg.time %>'>
                     <% const msgDate = new Date(msg.time) %>
