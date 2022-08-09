@@ -25,6 +25,10 @@ module.exports = class Formatter {
       this.payload.entities.roles = [];
     }
 
+    if (this.payload.messages === null || this.payload.messages === undefined) {
+      this.payload.messages = [];
+    }
+
     if (!this._validate()) {
       return null
     }
