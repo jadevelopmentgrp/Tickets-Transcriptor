@@ -13,6 +13,18 @@ module.exports = class Formatter {
   }
 
   async format () {
+    if (this.payload.entities.users === null || this.payload.entities.users === undefined) {
+      this.payload.entities.users = [];
+    }
+
+    if (this.payload.entities.channels === null || this.payload.entities.channels === undefined) {
+      this.payload.entities.channels = [];
+    }
+
+    if (this.payload.entities.roles === null || this.payload.entities.roles === undefined) {
+      this.payload.entities.roles = [];
+    }
+
     if (!this._validate()) {
       return null
     }
