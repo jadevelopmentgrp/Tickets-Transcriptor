@@ -15,7 +15,6 @@ class MessageMention extends HTMLElement {
       createUserPopout(this, {
         id: this.dataset.id || '',
         username: this.dataset.username || '',
-        discriminator: this.dataset.discriminator || '',
         avatar: this.dataset.avatar || '',
         badge: this.dataset.badge || ''
       })

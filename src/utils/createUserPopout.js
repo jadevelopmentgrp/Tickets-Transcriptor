@@ -43,7 +43,6 @@ function renderPopout (user) {
       }),
       e('div', { class: 'details' }, [
         e('div', { class: 'username' }, user.username),
-        e('div', { class: 'discriminator' }, [ '#', user.discriminator ]),
         e('div', { class: 'badge' }, user.badge)
       ])
     ]),

@@ -22,7 +22,7 @@
 ] %>
 <% for (const group of data.grouppedMessages) { %>
     <% for (const msg of group) { %>
-        <% const author = data.entities.users[msg.author] || { username: 'Deleted User', discriminator: '0000\u200B' } %>
+        <% const author = data.entities.users[msg.author] || { username: 'Deleted User'} %>
         <% if (msg.type && msg.type !== 0) { %>
             <!--suppress HtmlUnknownTag-->
             <discord-message data-id='<%= msg.id %>' data-author='<%= msg.author %>'
@@ -41,8 +41,8 @@
             <!--suppress HtmlUnknownTag-->
             <discord-message data-id='<%= msg.id %>' data-author='<%= msg.author %>'
                              class='<% if (group.indexOf(msg) === 0) { %> group-start<% } %><% if (msg.deleted) { %> deleted<% } %>'>
-                <img is='message-avatar' src='<%= author.avatar %>' data-discriminator='<%= author.discriminator %>'
-                     alt='avatar' class='avatar' onerror="this.onerror=null;this.src='https://cdn.discordapp.com/embed/avatars/<%= author.discriminator % 5 %>.png';" />
+                <img is='message-avatar' src='<%= author.avatar %>'
+                     alt='avatar' class='avatar' onerror="this.onerror=null;this.src='https://cdn.discordapp.com/embed/avatars/<%= author.id % 6 %>.png';" />
                 <!--suppress HtmlUnknownTag-->
                 <message-date class='time' data-type='time' data-timestamp='<%= msg.time %>'>
                     <% const msgDate = new Date(msg.time) %>
@@ -66,12 +66,6 @@
                         <%- markdown.parse(msg.content, data.entities, author.discriminator === '0000') %>
                     </message-markup>
                     <div class='embeds'>
-                        <% if (typeof msg.invites !== 'undefined') { %>
-                            <% for (const invite of msg.invites) { %>
-                                <!--suppress CheckTagEmptyBody-->
-                                <discord-invite data-code='<%= invite %>'></discord-invite>
-                            <% } %>
-                        <% } %>
                         <% if (typeof msg.attachments !== 'undefined') { %>
                             <% for (const attachment of msg.attachments) { %>
                                 <%- include('attachment.ejs', { data: data, attachment: attachment }) %>

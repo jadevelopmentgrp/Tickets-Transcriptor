@@ -17,7 +17,6 @@ class MessageAvatar extends HTMLImageElement {
     createUserPopout(this, {
       id: this.parentElement.dataset.author,
       username: contents.querySelector('.name').textContent,
-      discriminator: this.dataset.discriminator,
       avatar: this.src,
       badge: contents.querySelector('.badge').textContent
     })
@@ -25,8 +24,7 @@ class MessageAvatar extends HTMLImageElement {
 
   onError () {
     this.removeEventListener('error', this.onError)
-    const discriminator = parseInt(this.dataset.discriminator) || 0
-    this.src = `https://cdn.discordapp.com/embed/avatars/${discriminator % 4}.png`
+    this.src = `https://cdn.discordapp.com/embed/avatars/${this.dataset.author.id % 6}.png`
   }
 }
 
